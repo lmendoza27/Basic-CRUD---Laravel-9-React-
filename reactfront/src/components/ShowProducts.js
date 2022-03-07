@@ -50,6 +50,12 @@ const ShowProducts = () => {
         ) ) }
         </tbody>
         </table>
+
+            <h3>Open Another Examples</h3>
+
+            <Link to="/sum" className="btn btn-warning btn-lg mt-2 mb-2 text-black">Sumar</Link>
+            <br></br>
+            <Link to="/crud" className="btn btn-danger btn-lg mt-2 mb-2 text-white">Otro CRUD</Link>
     </div>
   )
 }
