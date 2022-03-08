@@ -56,6 +56,8 @@ const ShowProducts = () => {
             <Link to="/sum" className="btn btn-warning btn-lg mt-2 mb-2 text-black">Sumar</Link>
             <br></br>
             <Link to="/crud" className="btn btn-danger btn-lg mt-2 mb-2 text-white">Otro CRUD</Link>
+            <br></br>
+            <Link to="/food" className="btn btn-info btn-lg mt-2 mb-2 text-black">CRUD con Imagen</Link>
     </div>
   )
 }
