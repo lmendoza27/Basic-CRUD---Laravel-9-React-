@@ -27,6 +27,16 @@ class ProductController extends Controller
         $product->save();
     }
 
+    public function store2(Request $request)
+    {
+        $product = new Product();
+        $product->description = $request->description;
+        $product->price = $request->price;
+        $product->stock = $request->stock;
+
+        $product->save();
+    }
+
 
     public function show($id)
     {

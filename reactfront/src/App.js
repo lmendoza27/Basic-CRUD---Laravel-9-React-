@@ -21,6 +21,10 @@ import ShowFoods from './components/food/ShowFoods';
 import CreateFoods from './components/food/CreateFoods';
 import EditFoods from './components/food/EditFoods';
 
+// Login View
+
+import Login from './components/login/Login';
+
 function App() {
   return (
     <div className="App">
@@ -39,6 +43,8 @@ function App() {
           <Route path='/food' element={ <ShowFoods/>}/>
           <Route path='create_3' element={ <CreateFoods/> }/>
           <Route path='/edit_3/:id' element={ <EditFoods/> }/>
+
+          <Route path='/login' element={ <Login/> }/>
         </Routes>
       </BrowserRouter>
     </div>

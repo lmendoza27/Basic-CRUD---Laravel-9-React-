@@ -58,6 +58,8 @@ const ShowProducts = () => {
             <Link to="/crud" className="btn btn-danger btn-lg mt-2 mb-2 text-white">Otro CRUD</Link>
             <br></br>
             <Link to="/food" className="btn btn-info btn-lg mt-2 mb-2 text-black">CRUD con Imagen</Link>
+            <br></br>
+            <Link to="/login" className="btn btn-dark btn-lg mt-2 mb-2 text-white">Login</Link>
     </div>
   )
 }
