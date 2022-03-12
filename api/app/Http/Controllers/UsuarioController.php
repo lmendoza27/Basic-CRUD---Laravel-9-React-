@@ -17,4 +17,14 @@ class UsuarioController extends Controller
         $user->save();
         return $user;
     }
+
+    function login(Request $request)
+    {
+        $user = Usuario::where('email', $request->email)->first();
+        if(!$user || !Hash::check($request->password,$user->password))
+        {
+            return ["error"=>"Correo y/o Password Incorrecto(s)"];
+        }
+        return $user;   
+    }
 }

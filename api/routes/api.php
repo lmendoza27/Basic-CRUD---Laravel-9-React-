@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\ProductController;
 use App\Http\Controllers\FoodController;
 use App\Http\Controllers\UsuarioController;
+use App\Http\Controllers\ProductoController;
+
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
@@ -35,3 +37,6 @@ Route::group([
 });
 
 Route::post('register', [UsuarioController::class, 'register']);
+Route::post('login_ecomm', [UsuarioController::class, 'login']);
+Route::post('addproduct', [ProductoController::class, 'addProduct']);
+Route::get('list', [ProductoController::class, 'list']);
