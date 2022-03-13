@@ -40,3 +40,6 @@ Route::post('register', [UsuarioController::class, 'register']);
 Route::post('login_ecomm', [UsuarioController::class, 'login']);
 Route::post('addproduct', [ProductoController::class, 'addProduct']);
 Route::get('list', [ProductoController::class, 'list']);
+Route::delete('delete/{id}', [ProductoController::class, 'delete']);
+Route::get('obtener/{id}', [ProductoController::class, 'getProduct']);
+Route::get('buscar/{word}', [ProductoController::class, 'search']);

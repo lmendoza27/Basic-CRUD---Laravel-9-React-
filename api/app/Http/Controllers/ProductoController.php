@@ -23,4 +23,25 @@ class ProductoController extends Controller
     {
         return Producto::all();
     }
+
+    function delete($id)
+    {
+        $result = Producto::where('id', $id)->delete();
+        if($result)
+        {
+            return ["result"=>"Producto ha sido borrado"];
+        }else{
+            return ["result"=>"Operación fallida"];
+        }
+    }
+
+    function getProduct($id)
+    {
+        return Producto::find($id);
+    }
+
+    function search($word)
+    {
+        return Producto::where('name','Like','%'.$word.'%')->get();
+    }
 }
