@@ -43,3 +43,4 @@ Route::get('list', [ProductoController::class, 'list']);
 Route::delete('delete/{id}', [ProductoController::class, 'delete']);
 Route::get('obtener/{id}', [ProductoController::class, 'getProduct']);
 Route::get('buscar/{word}', [ProductoController::class, 'search']);
+Route::patch('actualiza/{id}', [ProductoController::class, 'update']);

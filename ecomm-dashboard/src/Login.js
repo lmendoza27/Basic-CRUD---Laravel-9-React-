@@ -1,6 +1,7 @@
 import React, {useState,useEffect} from 'react'
 import {useNavigate} from 'react-router-dom'
 import Header from './Header'
+import Swal from 'sweetalert2';
 
 function Login()
 {
@@ -29,8 +30,23 @@ function Login()
             body: JSON.stringify(item)
         });
         result = await result.json();
+        //alert(result.error)
         localStorage.setItem("user-info",JSON.stringify(result))
-        history("/add")
+
+        //await alert(localStorage.setItem("user-info",JSON.stringify(result.error)))
+        if(result.error === undefined){
+            history("/")
+        }else{
+            Swal.fire({
+                icon:"error",
+                text: " Credenciales Erróneas"
+              })
+              localStorage.removeItem('user-info');
+        }
+
+
+        
+        //history("/add")
     }
 
     return(

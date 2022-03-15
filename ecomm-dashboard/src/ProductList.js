@@ -2,6 +2,7 @@ import Header from './Header';
 import React, {useState,useEffect} from 'react'
 import {Table} from 'react-bootstrap'
 import {Link} from 'react-router-dom'
+import Swal from 'sweetalert2';
 
 function ProductList()
 {
@@ -12,12 +13,42 @@ function ProductList()
     
     async function deleteOperation(id)
     {
-        let result = await fetch("http://127.0.0.1:8000/api/delete/"+id,{
+        /*let result = await fetch("http://127.0.0.1:8000/api/delete/"+id,{
             method: "DELETE"
         });
         result = await result.json();
         console.warn(result);
+        getData();*/
+
+        const swalWithBootstrapButtons = Swal.mixin({
+            customClass: {
+              confirmButton: 'btn btn-success',
+              cancelButton: 'btn btn-danger'
+            },
+            buttonsStyling: false
+          })
+
+        const isConfirm = await Swal.fire({
+            title: '¿Estás seguro de borrar este registro?',
+            text: "No podrás revertirlo!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Sí, bórralo!'
+          }).then((result) => {
+            return result.isConfirmed
+          });
+
+          if(!isConfirm){
+            return;
+          }
+
+          await fetch("http://127.0.0.1:8000/api/delete/"+id,{
+            method: "DELETE"
+        });
         getData();
+        
     }
 
 
