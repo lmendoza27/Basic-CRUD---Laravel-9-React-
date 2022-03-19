@@ -6,7 +6,8 @@ use App\Http\Controllers\Api\ProductController;
 use App\Http\Controllers\FoodController;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\ProductoController;
-
+use App\Http\Controllers\Api\ChiefController;
+use App\Http\Controllers\Api\RecipeController;
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
@@ -44,3 +45,9 @@ Route::delete('delete/{id}', [ProductoController::class, 'delete']);
 Route::get('obtener/{id}', [ProductoController::class, 'getProduct']);
 Route::get('buscar/{word}', [ProductoController::class, 'search']);
 Route::patch('actualiza/{id}', [ProductoController::class, 'update']);
+
+Route::get('listarchief', [ChiefController::class, 'index']);
+Route::get('listarchief2',[ChiefController::class, 'chief']);
+
+Route::get('listar_recipes', [RecipeController::class, 'index']);
+Route::get('recipe/{id}', [RecipeController::class, 'show']);
