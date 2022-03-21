@@ -18,10 +18,22 @@ export default function ChiefCard({chief}) {
                 <p className="chief-recipe-count">Recipes: {chief.cantidad}<b></b></p>
                 <p className="chief-cuisine">Cuisine: {chief.cuisine}<b></b></p>
                 <p className="cheif-icons">
-                    <FontAwesomeIcon icon={faFacebook} />
-                    <FontAwesomeIcon icon={faTwitter} />
-                    <FontAwesomeIcon icon={faInstagram} />
-                </p>
+                    { chief.facebook ? 
+                  <a href={chief.facebook}  class="chief-social-link" target="_blank" without rel="noreferrer">  <FontAwesomeIcon className="facebook-icon" icon={faFacebook} /></a>  
+                 : 
+                 null
+                    }
+                    { chief.twitter ?
+                  <a href={chief.twitter}   class="chief-social-link" target="_blank" without rel="noreferrer"> <FontAwesomeIcon className="twitter-icon" icon={faTwitter} /> </a>
+                 :
+                 null
+                }
+                { chief.instagram ?
+                  <a href={chief.instagram} class="chief-social-link" target="_blank" without rel="noreferrer">  <FontAwesomeIcon className="instagram-icon" icon={faInstagram} /></a>
+                  :
+                  null
+                  }
+                  </p>
             </div>
         </div>
             

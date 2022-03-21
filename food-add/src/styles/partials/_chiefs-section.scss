@@ -31,14 +31,32 @@
             font-size: 1.5em;
             font-weight: bold;
             color: var(--text-color);
+            text-overflow: ellipsis; 
+            overflow: hidden; 
+            white-space: nowrap;
         }
         .chief-recipe-count, .chief-cuisine{
             font-size: 1.2em;
             color: var(--text-light);
         }
-        .cheif-icons{
+        .cheif-icons {
+            .chief-social-link {
+                color: inherit;
+            }
+            .facebook-icon {
+                color: #0063f7 ;
+            }
+            .twitter-icon {
+                color: #13b4ff;
+            }
+            .instagram-icon {
+                color: #ff0056;
+            }
             font-size: 1.2em;
-            svg{
+            svg {
+                margin-right: .5em;
+            }
+             /*svg{
                 margin-right: .5em;
                 &:nth-child(1){
                     color: #0063f7;
@@ -49,7 +67,9 @@
                 &:nth-child(3){
                     color: #ff0056;
                 }
-            }
+            }*/
+
+      
         }
     }
 }
